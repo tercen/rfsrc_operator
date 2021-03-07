@@ -6,6 +6,9 @@ library(reshape2)
 set.seed(42)
 ctx <- tercenCtx()
 
+find_interactions <- FALSE
+if(!is.null(ctx$op.value('find_interactions'))) find_interactions <- as.logical(ctx$op.value('find_interactions'))
+
 if (length(ctx$labels) < 1) stop("One or more label factors are required.")
 
 do.unique = function(df){
@@ -35,5 +38,19 @@ imp.table <- data.frame(
 ) %>% 
   ctx$addNamespace()
 
-imp.table %>%
-  ctx$save()
+if(find_interactions) {
+  inter <- find.interaction(rf, method = "vimp", nrep = 3)
+  inter <- data.frame(inter)
+  inter$interaction <- rownames(inter)
+  
+  inter$.ri <- as.numeric(gsub("c|:c.*", "", inter$interaction))
+  inter.table <-   inter %>% ctx$addNamespace()
+  
+  list(imp.table, inter.table) %>%
+    ctx$save()
+} else {
+  imp.table %>%
+    ctx$save()
+}
+
+

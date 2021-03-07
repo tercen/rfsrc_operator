@@ -13,6 +13,10 @@ Input projection|.
 `col`  | indicates the observations (e.g. samples, cells, individuals) 
 `y-axis`| measurement value
 
+Input projection|.
+---|---
+`find_interactions`   | compute interaction importance between variables
+
 Output relations|.
 ---|---
 `importance`| numeric, importance value calculated per row (i.e. variable)

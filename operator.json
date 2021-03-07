@@ -10,6 +10,12 @@
     "name": "random_seed",
     "defaultValue": 42,
     "description": "Random seed."
+    },
+    {
+    "kind": "BooleanProperty",
+    "name": "find_interactions",
+    "defaultValue": false,
+    "description": "Compute importance of variable interactions."
     }
   ]
 }
