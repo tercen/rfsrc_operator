@@ -50,7 +50,12 @@ if(find_interactions) {
   inter$interaction <- rownames(inter)
   
   inter$.ri <- as.numeric(gsub("c|:c.*", "", inter$interaction))
-  inter.table <-   inter %>% ctx$addNamespace()
+  
+  nm1 <- as.numeric(gsub("c|:c.*", "", inter$interaction)) + 1
+  nm2 <- as.numeric(gsub("c.*:|c", "", inter$interaction)) + 1
+  nms <- ctx$rselect(ctx$rnames)[[1]]
+  inter$interaction <- paste0(nms[nm1], " - ", nms[nm2])
+  inter.table <- inter %>% ctx$addNamespace()
   
   list(imp.table, inter.table) %>%
     ctx$save()
