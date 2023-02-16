@@ -1,0 +1,32 @@
+{
+  "kind": "OperatorUnitTest",
+  "name": "test_1",
+  "namespace": "ds3",
+  "inputDataUri": "test_1_in.csv",
+  "outputDataUri": ["test_1_out_1.csv", "test_1_out_3.csv"],
+  "columns": [
+    "observation"
+  ],
+  "rows": ["variable"],
+  "colors": [],
+  "labels": [
+    "color"
+  ],
+  "yAxis": "y_values",
+  "xAxis": "",
+  "generatedOn": "02/16/2023 05:41:06 PM 2023",
+  "version": "",
+  "propertyValues": [
+    {
+      "kind": "PropertyValue",
+      "name": "seed",
+      "value": "42"
+    },
+    {
+      "kind": "PropertyValue",
+      "name": "n_tree",
+      "value": "10000"
+    }
+  ],
+  "absTol": 0.1
+}
