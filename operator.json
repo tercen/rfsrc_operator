@@ -1,36 +1,44 @@
 {
   "name": "Random Forest",
   "description": "Compute RF importance values for each variable.",
-  "tags": ["machine learning", "modelling", "supervised learning", "regression"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/rfsrc_operator"],
+  "tags": [
+    "machine learning"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/rfsrc_operator"
+  ],
   "properties": [
     {
-    "kind": "DoubleProperty",
-    "name": "random_seed",
-    "defaultValue": -1,
-    "description": "Random seed for reproducible results."
+      "kind": "DoubleProperty",
+      "name": "random_seed",
+      "defaultValue": -1,
+      "description": "Random seed for reproducible results."
     },
     {
-    "kind": "DoubleProperty",
-    "name": "n_trees",
-    "defaultValue": 500,
-    "description": "Number of trees."
+      "kind": "DoubleProperty",
+      "name": "n_trees",
+      "defaultValue": 500,
+      "description": "Number of trees."
     },
     {
-    "kind": "EnumeratedProperty",
-    "name": "importance",
-    "defaultValue": "anti",
-    "values": ["anti", "permute", "random"],
-    "description": "Method for computing variable importance. See rfsrc documentation."
+      "kind": "EnumeratedProperty",
+      "name": "importance",
+      "defaultValue": "anti",
+      "values": [
+        "anti",
+        "permute",
+        "random"
+      ],
+      "description": "Method for computing variable importance. See rfsrc documentation."
     },
     {
-    "kind": "BooleanProperty",
-    "name": "find_interactions",
-    "defaultValue": false,
-    "description": "Compute importance of variable interactions."
+      "kind": "BooleanProperty",
+      "name": "find_interactions",
+      "defaultValue": false,
+      "description": "Compute importance of variable interactions."
     }
   ]
 }
-
-
