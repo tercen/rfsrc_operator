@@ -1,6 +1,6 @@
 {
   "name": "Random Forest",
-  "description": "Compute RF importance values for each variable.",
+  "description": "Fits a Random Forest model to your data.",
   "tags": [
     "machine learning"
   ],
