@@ -1,68 +1,100 @@
 {
-  "outputSpecs": [{
-    "kind": "ConditionalJoinSpec",
-    "description": "Output varies based on find_interactions property",
-    "alternatives": [
-      {
-        "condition": "Without interactions (find_interactions = false)",
-        "joinSpec": {
-          "kind": "OperatorJoinSpec",
-          "joinOperators": [{
-            "kind": "JoinOperator",
-            "joinType": "left",
-            "leftPair": {
-              "kind": "ColumnPair",
-              "lColumns": ["Row"],
-              "rColumns": ["Row"]
-            },
-            "rightRelation": {
-              "kind": "TableRelation",
-              "attributes": [
-                {"kind": "Attribute", "name": "importance", "type": "double"}
-              ]
-            }
-          }]
-        }
-      },
-      {
-        "condition": "With interactions (find_interactions = true)",
-        "joinSpec": {
-          "kind": "OperatorJoinSpec",
-          "joinOperators": [
-            {
-              "kind": "JoinOperator",
-              "joinType": "left",
-              "leftPair": {
-                "kind": "ColumnPair",
-                "lColumns": ["Row"],
-                "rColumns": ["Row"]
-              },
-              "rightRelation": {
-                "kind": "TableRelation",
-                "attributes": [
-                  {"kind": "Attribute", "name": "importance", "type": "double"}
-                ]
+  "outputSpecsV2": [
+    {
+      "kind": "ConditionalJoinSpec",
+      "description": "Output varies based on find_interactions property",
+      "alternatives": [
+        {
+          "condition": "Without interactions (find_interactions = false)",
+          "joinSpec": {
+            "kind": "OperatorJoinSpec",
+            "joinOperators": [
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row"
+                  ],
+                  "rColumns": [
+                    "Row"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "importance",
+                      "type": "double"
+                    }
+                  ]
+                }
               }
-            },
-            {
-              "kind": "JoinOperator",
-              "joinType": "left",
-              "leftPair": {
-                "kind": "ColumnPair",
-                "lColumns": ["Row"],
-                "rColumns": ["Row"]
+            ]
+          }
+        },
+        {
+          "condition": "With interactions (find_interactions = true)",
+          "joinSpec": {
+            "kind": "OperatorJoinSpec",
+            "joinOperators": [
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row"
+                  ],
+                  "rColumns": [
+                    "Row"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "importance",
+                      "type": "double"
+                    }
+                  ]
+                }
               },
-              "rightRelation": {
-                "kind": "TableRelation",
-                "attributes": [
-                  {"kind": "Attribute", "name": "Multivar.1", "type": "double"},
-                  {"kind": "Attribute", "name": "interaction", "type": "string"}
-                ]
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row"
+                  ],
+                  "rColumns": [
+                    "Row"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "Multivar.1",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "interaction",
+                      "type": "string"
+                    }
+                  ]
+                }
               }
-            }
-          ]
+            ]
+          }
         }
-      }
-    ]
-  }]
+      ]
+    }
+  ]
 }
