@@ -40,5 +40,65 @@
       "defaultValue": false,
       "description": "Compute importance of variable interactions."
     }
-  ]
+  ],
+  "operatorSpec": {
+    "kind": "OperatorSpec",
+    "ontologyUri": "https://tercen.com/_ontology/tercen",
+    "ontologyVersion": "1.0.0",
+    "inputSpecs": [
+      {
+        "kind": "CrosstabSpec",
+        "metaFactors": [
+          {
+            "kind": "MetaFactor",
+            "name": "Row",
+            "type": "",
+            "description": "Variables/features for the model",
+            "ontologyMapping": "variable",
+            "crosstabMapping": "row",
+            "cardinality": "0..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Column",
+            "type": "",
+            "description": "Observations/samples",
+            "ontologyMapping": "observation",
+            "crosstabMapping": "column",
+            "cardinality": "0..n",
+            "factors": []
+          }
+        ],
+        "axis": [
+          {
+            "kind": "AxisSpec",
+            "metaFactors": [
+              {
+                "kind": "MetaFactor",
+                "name": "Y-Axis",
+                "type": "numeric",
+                "description": "Measurement values",
+                "ontologyMapping": "measurement",
+                "crosstabMapping": "y",
+                "cardinality": "1",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Label",
+                "type": "",
+                "description": "Target variable for prediction (required)",
+                "ontologyMapping": "group",
+                "crosstabMapping": "label",
+                "cardinality": "1..n",
+                "factors": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputSpecsV2": []
+  }
 }

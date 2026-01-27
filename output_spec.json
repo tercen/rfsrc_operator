@@ -5,6 +5,7 @@
       "description": "Output varies based on find_interactions property",
       "alternatives": [
         {
+          "kind": "OutputAlternative",
           "condition": "Without interactions (find_interactions = false)",
           "joinSpec": {
             "kind": "OperatorJoinSpec",
@@ -36,6 +37,7 @@
           }
         },
         {
+          "kind": "OutputAlternative",
           "condition": "With interactions (find_interactions = true)",
           "joinSpec": {
             "kind": "OperatorJoinSpec",
